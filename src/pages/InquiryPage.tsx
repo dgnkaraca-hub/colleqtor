@@ -96,8 +96,8 @@ export default function InquiryPage() {
             merak ettikleriniz için bize yazın.
           </p>
           <p className="muted">
-            Bu bir satış sayfası değil; sakin bir temas noktasıdır. Birkaç satır bırakmanız
-            yeterli; en kısa sürede size dönüş yaparız.
+            Kapımız her zaman aralık. Birkaç satır bırakmanız yeterli; en kısa sürede size dönüş
+            yaparız.
           </p>
         </div>
 

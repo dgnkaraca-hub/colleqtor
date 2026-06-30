@@ -2,7 +2,7 @@
 
 **Yaşayan Koleksiyon & Dijital Arşiv** — antika değerli nesneler, oyma ahşap figürler, heykelsel işler, dekoratif sanatlar, resim, çizim ve tekstiller için sessiz bir dijital galeri / arşiv arayüzü prototipi.
 
-Bu bir e-ticaret sitesi değildir: satış dili yoktur; küratoryal bir arşiv ve "yazışmaya açık" bir temas noktası olarak tasarlanmıştır.
+Küratoryal bir arşiv ve sakin bir galeri olarak tasarlanmıştır; nesneleri kaydeden, koruyan ve iletişime açık bir temas noktası sunan bir platformdur.
 
 ---
 

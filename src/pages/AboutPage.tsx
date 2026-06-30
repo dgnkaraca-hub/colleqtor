@@ -15,9 +15,9 @@ export default function AboutPage() {
           gelir.
         </p>
         <p>
-          Amacımız satmak değil; nesneleri keşfetmek, kaydetmek ve geleceğe aktarmaktır. Bu yüzden
-          colleqtor bir mağaza gibi değil; sessiz bir galeri, bir küratör–koleksiyoner buluşma
-          noktası ve maddi kültür için bir platform gibi düşünülmüştür.
+          colleqtor; nesneleri keşfetmek, kaydetmek ve geleceğe aktarmak için kurulmuş sessiz bir
+          galeri, bir küratör–koleksiyoner buluşma noktası ve maddi kültür için bir platformdur.
+          Kapımız, bir nesneyi yakından tanımak isteyen herkese aralık.
         </p>
       </div>
       <section>
@@ -34,8 +34,8 @@ export default function AboutPage() {
             <LogoSymbol />
             <h3>Sessiz Galeri</h3>
             <p>
-              Doğal ışık, dokunun ve patinanın görünür kaldığı bir sunum. Aceleci satış dili yerine
-              dikkatli bir bakış.
+              Doğal ışık, dokunun ve patinanın görünür kaldığı bir sunum. Acele etmeyen, dikkatli
+              bir bakış.
             </p>
           </div>
           <div className="about-card">
