@@ -21,7 +21,7 @@ interface Props {
   categories: { label: string; value: string }[];
 }
 
-const STATUSES = ["İnceleme talebi", "Yazışmaya açık"];
+const STATUSES = ["İnceleme talebi", "İletişime açık"];
 
 function Pill({
   icon,

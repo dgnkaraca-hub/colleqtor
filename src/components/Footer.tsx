@@ -5,7 +5,7 @@ const FOOTER_NAV = [
   { label: "KOLEKSİYON", to: "/koleksiyon" },
   { label: "GÜNLÜK", to: "/gunluk" },
   { label: "HAKKIMIZDA", to: "/hakkimizda" },
-  { label: "YAZIŞMA", to: "/yazisma" },
+  { label: "İLETİŞİM", to: "/iletisim" },
 ];
 
 // Placeholder destinations — replace with the real handle / inbox before launch.

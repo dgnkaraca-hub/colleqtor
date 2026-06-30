@@ -30,8 +30,8 @@ export const CATEGORY_FROM_LABEL: Record<string, string> = {
 export const NAV = [
   { label: "KOLEKSİYON", to: "/koleksiyon", key: "koleksiyon" },
   { label: "NESNELER", to: "/koleksiyon", key: "nesneler" },
-  { label: "GÜNLÜK / JOURNAL", to: "/gunluk", key: "gunluk" },
+  { label: "GÜNLÜK", to: "/gunluk", key: "gunluk" },
   { label: "HAKKIMIZDA", to: "/hakkimizda", key: "hakkimizda" },
   { label: "RESİM & ÇİZİM", to: "/resim-cizim", key: "resim-cizim" },
-  { label: "YAZIŞMA", to: "/yazisma", key: "yazisma" },
+  { label: "İLETİŞİM", to: "/iletisim", key: "iletisim" },
 ];

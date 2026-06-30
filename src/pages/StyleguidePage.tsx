@@ -17,8 +17,8 @@ const TOKENS: [string, string][] = [
 
 const TEMPLATES: [string, string, string][] = [
   ["1. Seçili Nesne", "Koleksiyondaki nesneleri öne çıkaran sade ve zarif bir sunum.", "Objektif fotoğraf + isim, köken, dönem bilgisi."],
-  ["2. Günlük / Journal", "Günlük notlar, düşünceler ve koleksiyon sürecinden kesitler.", "El yazısı etkisi, tarih, doğal kâğıt dokusu."],
-  ["3. Malzeme / Material Study", "Koleksiyondaki malzemeleri ve dokuları inceleyen analiz içerikleri.", "Doku fotoğrafı + kısa açıklama."],
+  ["2. Günlük", "Günlük notlar, düşünceler ve koleksiyon sürecinden kesitler.", "El yazısı etkisi, tarih, doğal kâğıt dokusu."],
+  ["3. Malzeme", "Koleksiyondaki malzemeleri ve dokuları inceleyen analiz içerikleri.", "Doku fotoğrafı + kısa açıklama."],
   ["4. Resim / Çizim", "Arşivdeki resim, çizim ve baskı çalışmalarının paylaşıldığı alan.", "Eser görseli + teknik ve dönem bilgisi."],
   ["5. Özel Koleksiyon", "Özel koleksiyonlar, araştırmalar ve iş birlikleri için iletişim odaklı içerikler.", "Davetkâr metin + yönlendirme."],
 ];

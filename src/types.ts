@@ -1,4 +1,4 @@
-export type StatusLabel = "İnceleme talebi" | "Yazışmaya açık";
+export type StatusLabel = "İnceleme talebi" | "İletişime açık";
 
 /**
  * A single object image. `src` points to a real photograph under /public

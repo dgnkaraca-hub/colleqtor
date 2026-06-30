@@ -277,7 +277,7 @@
   .journal-card .jc-thumb { width: 120px; height: 120px; flex: none; border-radius: var(--cq-radius-sm); overflow: hidden; }
   .journal-card h3 { font-size: 1.4rem; margin-bottom: 0.4rem; line-height: 1.12; }
 
-  /* ============================================================ inquiry (yazışma) page */
+  /* ============================================================ inquiry (iletişim) page */
   .inquiry-page { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem,5vw,4rem); padding: 1rem 0 2rem; align-items: start; }
   .inquiry-intro h1 { font-size: clamp(2.4rem,5vw,3.6rem); margin-bottom: 1.4rem; }
   .inquiry-intro .poem { font-family: var(--cq-font-display); font-size: 1.4rem; line-height: 1.55; color: var(--cq-ink); max-width: 24rem; margin-bottom: 1.6rem; }

@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -29,7 +29,9 @@ export default function App() {
           <Route path="/koleksiyon" element={<CollectionPage />} />
           <Route path="/nesneler/:id" element={<ObjectDetailPage />} />
           <Route path="/gunluk" element={<JournalPage />} />
-          <Route path="/yazisma" element={<InquiryPage />} />
+          <Route path="/iletisim" element={<InquiryPage />} />
+          {/* legacy path — keep old links working */}
+          <Route path="/yazisma" element={<Navigate to="/iletisim" replace />} />
           <Route
             path="/resim-cizim"
             element={<CollectionPage presetCategory="Resim & Çizim" />}

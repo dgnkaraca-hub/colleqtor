@@ -40,10 +40,10 @@ export default function AboutPage() {
           </div>
           <div className="about-card">
             <LogoSymbol />
-            <h3>Yazışmaya Açık</h3>
+            <h3>İletişime Açık</h3>
             <p>
-              İlgilendiğiniz nesneler için inceleme talebi bırakabilir, koleksiyon hakkında bizimle
-              yazışabilirsiniz.
+              İlgilendiğiniz nesneler için inceleme talebi bırakabilir, koleksiyon hakkında bize
+              yazabilirsiniz.
             </p>
           </div>
         </div>

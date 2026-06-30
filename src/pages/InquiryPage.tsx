@@ -87,21 +87,17 @@ export default function InquiryPage() {
       <div className="inquiry-page" style={{ paddingTop: "clamp(2.4rem,6vw,4rem)" }}>
         <div className="inquiry-intro">
           <div className="small-caps bronze" style={{ marginBottom: "1rem" }}>
-            Yazışma
+            İletişim
           </div>
-          <h1>Yazışmaya Açılan Kapı</h1>
+          <h1>İletişim</h1>
           <p className="poem">
-            Bazı nesneler sessizdir;
+            Bir nesne, bir dönem ya da koleksiyon hakkında
             <br />
-            ama hikâyeleri, dinlemeye niyet edenle buluşur.
-            <br />
-            Niyetinizi bir satıra dönüştürün,
-            <br />
-            söyleyecekleri elbet vardır.
+            merak ettikleriniz için bize yazın.
           </p>
           <p className="muted">
-            Bu bir satış sayfası değil; düşünceli bir temas noktasıdır. Bir nesne, bir dönem ya da
-            koleksiyon hakkında merak ettikleriniz için birkaç satır bırakmanız yeterli.
+            Bu bir satış sayfası değil; sakin bir temas noktasıdır. Birkaç satır bırakmanız
+            yeterli; en kısa sürede size dönüş yaparız.
           </p>
         </div>
 
@@ -170,7 +166,7 @@ export default function InquiryPage() {
             <textarea
               id="f-msg"
               name="message"
-              placeholder="Niyetinizi bir satıra dönüştürün…"
+              placeholder="Mesajınızı buraya yazın…"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               aria-required="true"
@@ -185,12 +181,12 @@ export default function InquiryPage() {
           </div>
 
           <button className="submit-btn" type="submit" disabled={status === "sending"}>
-            {status === "sending" ? "Gönderiliyor…" : "Bir Not Bırakın"} <span>→</span>
+            {status === "sending" ? "Gönderiliyor…" : "Gönder"} <span>→</span>
           </button>
 
           {status === "success" ? (
             <div className="form-ok show" role="status">
-              Notunuz alındı. En kısa sürede sizinle yazışmaya açılan kapıdan iletişime geçeceğiz.
+              Mesajınız alındı. En kısa sürede size dönüş yapacağız.
             </div>
           ) : null}
           {status === "error" ? (
