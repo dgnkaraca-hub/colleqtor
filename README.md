@@ -23,13 +23,13 @@ Bu bir e-ticaret sitesi değildir: satış dili yoktur; küratoryal bir arşiv v
 
 ```bash
 npm install      # bağımlılıkları kurar (ilk seferde bir kez)
-npm run dev      # geliştirme sunucusu -> http://localhost:5173
+npm run dev      # geliştirme sunucusu -> http://localhost:5188
 npm run build    # tip kontrolü + production derlemesi -> dist/
 npm run preview  # build çıktısını yerelde önizler
 npm run typecheck # yalnızca TypeScript tip kontrolü
 ```
 
-Geliştirmeye başlamak için: `npm install` ardından `npm run dev` ve tarayıcıda `http://localhost:5173` adresini açın.
+Geliştirmeye başlamak için: `npm install` ardından `npm run dev` ve tarayıcıda `http://localhost:5188` adresini açın.
 
 ## Sayfalar / Rotalar
 
