@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LogoLockup from "./LogoLockup";
 import { SearchIcon, MenuIcon } from "./Icons";
 import { NAV } from "../lib/data";
@@ -7,6 +7,7 @@ import { NAV } from "../lib/data";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const renderLinks = () =>
     NAV.map((n) => (
@@ -28,9 +29,17 @@ export default function Header() {
         </Link>
         <nav className="main-nav">{renderLinks()}</nav>
         <div className="header-tools">
-          <Link to="/koleksiyon" className="icon-btn" aria-label="Ara">
+          <button
+            type="button"
+            className="icon-btn"
+            aria-label="Arşivde ara"
+            onClick={() => {
+              setOpen(false);
+              navigate("/koleksiyon", { state: { focusSearch: true } });
+            }}
+          >
             <SearchIcon />
-          </Link>
+          </button>
           <button
             className="icon-btn hamburger"
             aria-label="Menü"

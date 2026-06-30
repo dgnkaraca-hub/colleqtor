@@ -27,7 +27,11 @@ export default function ObjectDetailPage() {
   const rows = buildMeta(obj);
   const paragraphs = buildDescription(obj);
   const note = buildNote(obj);
-  const related = OBJECTS.filter((o) => o.id !== obj.id).slice(0, 4);
+
+  // Related: same category first, then top up with other objects.
+  const sameCategory = OBJECTS.filter((o) => o.id !== obj.id && o.category === obj.category);
+  const others = OBJECTS.filter((o) => o.id !== obj.id && o.category !== obj.category);
+  const related = [...sameCategory, ...others].slice(0, 4);
 
   return (
     <>
@@ -43,6 +47,10 @@ export default function ObjectDetailPage() {
         <div className="detail-grid">
           <ImageGallery obj={obj} />
           <div>
+            <div className="detail-status">
+              <span className="status-badge">{obj.statusLabel}</span>
+              <span className="detail-cat">{obj.category}</span>
+            </div>
             <h1 className="detail-title">{obj.title}</h1>
             <MetadataTable rows={rows} />
             <div className="detail-desc">
@@ -68,6 +76,16 @@ export default function ObjectDetailPage() {
                 <p>{note}</p>
               </div>
             </div>
+
+            {obj.tags?.length ? (
+              <ul className="tag-list" aria-label="Etiketler">
+                {obj.tags.map((t) => (
+                  <li key={t} className="tag">
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
           </div>
         </div>
       </div>
@@ -75,7 +93,7 @@ export default function ObjectDetailPage() {
       <section className="wrap">
         <div className="related-split">
           <RelatedObjects objects={related} />
-          <QuietInquiryPanel />
+          <QuietInquiryPanel objectId={obj.availableForInquiry === false ? undefined : obj.id} />
         </div>
       </section>
     </>

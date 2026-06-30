@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Placeholder from "./Placeholder";
-import type { ArchiveObject } from "../types";
+import type { ArchiveObject, ObjectImage } from "../types";
 
 interface Props {
   obj: ArchiveObject;
@@ -8,12 +8,19 @@ interface Props {
 }
 
 export default function ObjectCard({ obj, compact = false }: Props) {
+  const cover: ObjectImage | undefined = obj.images?.[0];
+
   return (
     <Link className={"obj-card" + (compact ? " compact" : "")} to={"/nesneler/" + obj.id}>
       <div className="obj-thumb">
-        <Placeholder category={obj.category} title={obj.title} />
+        {cover?.src ? (
+          <img src={cover.src} alt={cover.alt} className="obj-thumb-img" />
+        ) : (
+          <Placeholder category={obj.category} title={obj.title} />
+        )}
       </div>
       <div className="obj-body">
+        <div className="obj-cat small-caps">{obj.category}</div>
         <div className="obj-title">{obj.title}</div>
         <dl className="obj-meta">
           <dt>Köken</dt>
@@ -23,6 +30,7 @@ export default function ObjectCard({ obj, compact = false }: Props) {
           <dt>Dönem</dt>
           <dd>{obj.period}</dd>
         </dl>
+        {!compact ? <p className="obj-note">{obj.shortDescription}</p> : null}
         <div className="obj-status">
           <span>
             {obj.statusLabel} <span className="plus">+</span>

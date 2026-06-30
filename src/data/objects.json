@@ -1,115 +1,297 @@
 [
   {
     "id": "ahs-bodhisattva-001",
+    "slug": "ahsap-bodhisattva-figuru",
     "title": "Ahşap Bodhisattva Figürü",
     "category": "Ahşap Oymacılık",
     "origin": "Nepal – Himalaya Bölgesi",
-    "material": "Ahşap",
+    "region": "Himalaya",
+    "material": "Ahşap (muhtemelen şimşir veya sedir)",
     "period": "18. – 19. yy.",
+    "estimatedYear": "yaklaşık 1850",
     "dimensions": "Y 52 cm · G 32 cm · D 22 cm",
-    "condition": "İyi. Yüzeyde yaşa bağlı patina ve doğal kullanım izleri mevcuttur.",
-    "provenance": "Geleneksel manastır koleksiyonu, Nepal.",
+    "condition": "İyi. Yüzeyde yaşa bağlı patina mevcut; yapısal çatlak yoktur.",
+    "provenance": "Geleneksel manastır koleksiyonu, Nepal; özel koleksiyon yoluyla edinilmiştir.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "İnce oyma detayları, dingin yüz ifadesi ve zamanla koyulaşmış ahşap patinasıyla kültürel hafıza taşıyan figüratif bir eser.",
-    "imageKey": "bodhisattva"
+    "longDescription": [
+      "Bu zarif Bodhisattva figürü, Himalaya sanatının ruhani derinliğini ve usta zanaatkârların yüksek oyma becerisini yansıtır. Çok kollu formu merhamet ve bilgeliğin niteliklerini sembolize ederken, elindeki lotus tomurcukları aydınlanma yoluna işaret eder. Taç, kolye ve giysi kıvrımlarındaki ince oyma detaylar, dönemin estetik zevkini ve ritüel hassasiyetini bütün gücüyle ortaya koyar.",
+      "Doğal ahşabın sıcak tonları ve zamanla oluşmuş patinası, figüre hem vakar hem de yaşanmışlık kazandırır. Bu eser yalnızca bir ibadet nesnesi değil; aynı zamanda Himalaya kültürel belleğinin, maneviyatla günlük yaşamın kesiştiği bir dönemin sessiz tanığıdır."
+    ],
+    "collectorNote": "Bodhisattva ikonografisinde çok kollu betimlemeler, tüm varlıklara uzanan şefkatin ve sonsuz yardım etme arzusunun sembolüdür. Bu tür figürler, tapınak sunaklarında veya özel meditasyon alanlarında yer alır.",
+    "images": [
+      { "alt": "Ahşap Bodhisattva figürünün önden görünümü", "caption": "Önden görünüm — çok kollu form ve lotus tomurcukları." },
+      { "alt": "Bodhisattva figürünün yüz ve taç detayı", "caption": "Detay — yüz ifadesi ve taçtaki oyma işçiliği." },
+      { "alt": "Bodhisattva figürünün giysi kıvrımları detayı", "caption": "Detay — giysi kıvrımlarında patina." },
+      { "alt": "Bodhisattva figürünün arkadan görünümü", "caption": "Arkadan görünüm — yüzey dokusu." }
+    ],
+    "imageKey": "bodhisattva",
+    "tags": ["figür", "ritüel", "oyma", "himalaya", "maneviyat"],
+    "featured": true,
+    "availableForInquiry": true
   },
   {
     "id": "wood-ritual-tray-002",
+    "slug": "el-oyma-ahsap-rituel-teknesi",
     "title": "El Oyma Ahşap Ritüel Teknesi",
     "category": "Antika & Dekoratif Sanatlar",
     "origin": "Endonezya",
+    "region": "Güneydoğu Asya",
     "material": "Masif Ahşap",
     "period": "19. yy.",
+    "estimatedYear": "yaklaşık 1870",
+    "dimensions": "U 64 cm · G 28 cm · Y 11 cm",
+    "condition": "İyi. Kenarlarda kullanım izleri ve doğal patina.",
+    "provenance": "Özel koleksiyon, Hollanda.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "Organik kenar formu ve derin ahşap dokusuyla ritüel nesne ile heykelsi form arasında duran özel bir parça.",
-    "imageKey": "carved_tray"
+    "longDescription": [
+      "Tek bir masif ahşap bloktan oyulan bu tekne, organik kenar hattı ve elle takip edilebilen oluk izleriyle hem işlevsel bir kap hem de heykelsi bir form olarak okunur. Yüzeydeki ince keski izleri, zanaatkârın elinin ritmini görünür kılar.",
+      "Zamanla oluşan koyu patina, malzemenin gözeneklerine sinmiş; nesneye dokunulmuşluk ve süreklilik hissi verir. Ritüel ya da gündelik kullanımın izleri, parçanın hikâyesini sessizce taşır."
+    ],
+    "collectorNote": "Bu tür tekneler, tören sunumlarında ve gündelik hazırlıkta ortak biçimde kullanılır; biçimleri bölgeden bölgeye değişen el geleneklerinin izini taşır.",
+    "images": [
+      { "alt": "El oyma ahşap ritüel teknesinin üstten görünümü", "caption": "Üstten görünüm — organik kenar formu." },
+      { "alt": "Teknenin iç yüzeyindeki keski izleri", "caption": "Detay — iç yüzeyde keski ritmi." },
+      { "alt": "Teknenin kenar patinası detayı", "caption": "Detay — kenarda doğal patina." }
+    ],
+    "imageKey": "carved_tray",
+    "tags": ["ritüel", "oyma", "dekoratif", "masif ahşap"],
+    "featured": true,
+    "availableForInquiry": true
   },
   {
     "id": "monk-figure-003",
+    "slug": "dua-eden-kesis-heykeli",
     "title": "Dua Eden Keşiş Heykeli",
     "category": "Heykelsel Nesneler",
     "origin": "Çin",
+    "region": "Doğu Asya",
     "material": "Ahşap",
     "period": "Qing Dönemi",
+    "estimatedYear": "18. yy.",
+    "dimensions": "Y 38 cm · G 16 cm · D 14 cm",
+    "condition": "İyi. Tabanda küçük onarım izi; yüzeyde doğal patina.",
+    "provenance": "Özel koleksiyon, Singapur.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "Sessiz bir içe dönüş hâlini taşıyan, gündelik ritüel ve zanaat hafızasını görünür kılan ahşap figür.",
-    "imageKey": "monk"
+    "longDescription": [
+      "Başı hafifçe öne eğik, elleri dua hâlinde birleşmiş bu keşiş figürü, dışsal hareketten çok içsel bir duruşu betimler. Sade hatlar ve abartısız oran, dönemin dingin estetiğini yansıtır.",
+      "Ahşabın damarları, figürün giysi kıvrımlarıyla aynı yönde akar; bu uyum, zanaatkârın malzemeyi dinleyerek çalıştığını gösterir. Yüzeydeki patina, uzun yıllar boyunca elde tutulmuşluğun sessiz kaydıdır."
+    ],
+    "collectorNote": "Dua eden figürler, hem sunak hem de kişisel tefekkür nesnesi olarak kullanılır; bu çift işlev, parçanın yüzeyinde bıraktığı izlerle okunabilir.",
+    "images": [
+      { "alt": "Dua eden keşiş heykelinin önden görünümü", "caption": "Önden görünüm — dua hâlindeki eller." },
+      { "alt": "Keşiş figürünün yüz detayı", "caption": "Detay — içe dönük yüz ifadesi." }
+    ],
+    "imageKey": "monk",
+    "tags": ["figür", "heykel", "ritüel", "qing"],
+    "featured": false,
+    "availableForInquiry": true
   },
   {
     "id": "cabinet-detail-004",
+    "slug": "antika-dolap-detay",
     "title": "Antika Dolap / Detay",
     "category": "Ahşap Oymacılık",
     "origin": "Anadolu",
+    "region": "Anadolu",
     "material": "Ahşap, Sedef, Kemik",
     "period": "19. yy.",
+    "estimatedYear": "yaklaşık 1880",
+    "dimensions": "Y 146 cm · G 92 cm · D 44 cm",
+    "condition": "İyi. Bazı kakma parçalarda yaşa bağlı oynama; genel yapı sağlam.",
+    "provenance": "Özel koleksiyon, İstanbul.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "Geometrik süsleme dili, malzeme geçişleri ve işçilik ritmiyle döneminin zanaat anlayışını yansıtan dolap detayı.",
-    "imageKey": "cabinet"
+    "longDescription": [
+      "Sedef ve kemik kakmalarının ahşap zemin üzerinde kurduğu geometrik düzen, bu parçayı bir mobilyadan çok bir yüzey kompozisyonuna dönüştürür. Her kakma, ince işçilikle yerine yerleştirilmiş; ışıkla birlikte değişen bir doku oluşturur.",
+      "Malzeme geçişleri — sıcak ahşap, soğuk sedef parıltısı, mat kemik — dönemin zengin zanaat dağarcığını gösterir. Detay, bütünün taşıdığı estetiği tek bir yüzeyde özetler."
+    ],
+    "collectorNote": "Kakma geleneğinde geometrik düzen, ustanın imzası gibidir; oran ve tekrar, atölyeyi ve bölgeyi ele veren ince ipuçları taşır.",
+    "images": [
+      { "alt": "Antika dolabın sedef kakmalı ön yüzeyi", "caption": "Ön yüzey — geometrik sedef kakma." },
+      { "alt": "Dolap yüzeyindeki kakma detayı", "caption": "Detay — malzeme geçişleri." },
+      { "alt": "Dolabın kenar işçiliği", "caption": "Detay — kenar bordürü." }
+    ],
+    "imageKey": "cabinet",
+    "tags": ["mobilya", "kakma", "sedef", "geometrik", "anadolu"],
+    "featured": false,
+    "availableForInquiry": true
   },
   {
     "id": "landscape-005",
+    "slug": "peyzaj-calismasi",
     "title": "Peyzaj Çalışması",
     "category": "Resim & Çizim",
     "origin": "Osmanlı",
+    "region": "Anadolu",
     "material": "Kağıt Üzerine Suluboya",
     "period": "19. yy.",
+    "estimatedYear": "yaklaşık 1865",
+    "dimensions": "34 × 48 cm (çerçevesiz)",
+    "condition": "İyi. Kâğıtta hafif yaşa bağlı sararma; renkler korunmuş.",
+    "provenance": "Özel koleksiyon, İzmir.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "Ağaç, dağ ve ufuk çizgisi üzerinden zamansız bir manzara hafızası kuran kâğıt üzeri çalışma.",
-    "imageKey": "landscape"
+    "longDescription": [
+      "İnce suluboya katmanlarıyla kurulan bu manzara, ayrıntıdan çok atmosferi önceler. Ufuk çizgisi yumuşak geçişlerle eriyip giderken, ön plandaki ağaç formu kompozisyona sessiz bir denge verir.",
+      "Kâğıdın dokusu boyanın saydamlığıyla birleşir; ışık, yüzeyin altından geliyormuş gibi durur. Çalışma, bir yeri tasvir etmekten çok bir anı hatırlatır."
+    ],
+    "collectorNote": "Suluboya manzaralar, dönemin seyahat ve gözlem kültürünün izlerini taşır; çoğu zaman bir defterin ya da albümün parçasıydı.",
+    "images": [
+      { "alt": "Kağıt üzerine suluboya peyzaj çalışması", "caption": "Tam görünüm — ufuk ve ön plan dengesi." },
+      { "alt": "Peyzaj çalışmasının ön plan ağaç detayı", "caption": "Detay — ön planda ağaç formu." }
+    ],
+    "imageKey": "landscape",
+    "tags": ["resim", "suluboya", "manzara", "kağıt", "osmanlı"],
+    "featured": true,
+    "availableForInquiry": true
   },
   {
     "id": "handmade-vessel-006",
+    "slug": "geleneksel-el-yapimi-kap",
     "title": "Geleneksel El Yapımı Kap",
     "category": "Tekstil / El Sanatları",
     "origin": "Anadolu",
+    "region": "Anadolu",
     "material": "Ahşap, Bitkisel Lif",
     "period": "20. yy. Başı",
+    "estimatedYear": "yaklaşık 1915",
+    "dimensions": "Y 18 cm · Ø 24 cm",
+    "condition": "İyi. Lif örgüde yer yer aşınma; biçim korunmuş.",
+    "provenance": "Köy koleksiyonu, Anadolu; özel koleksiyon.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "Gündelik kullanım ile el işçiliğinin kesiştiği, biçimi ve yüzeyiyle yaşayan bir nesne.",
-    "imageKey": "vessel"
+    "longDescription": [
+      "Ahşap gövde ile bitkisel lif örgünün birleştiği bu kap, işlev ile el geleneğinin iç içe geçtiği bir nesnedir. Örgünün ritmi, kullanan ellerin alışkanlığını ve yerel malzemenin sınırlarını aynı anda gösterir.",
+      "Yüzeydeki aşınma, kusurdan çok bir kullanım kaydıdır; nesneyi gündelik hayatın içine yerleştirir. Sade biçimi, işlevin estetiğe dönüştüğü o ince eşikte durur."
+    ],
+    "collectorNote": "Bu tür kaplar, evde üretilen ve nesilden nesile aktarılan halk nesneleridir; biçimleri, bölgenin bitki örtüsü ve gündelik ihtiyaçlarıyla şekillenir.",
+    "images": [
+      { "alt": "Geleneksel el yapımı kabın genel görünümü", "caption": "Genel görünüm — ahşap gövde ve lif örgü." },
+      { "alt": "Kabın lif örgü dokusu detayı", "caption": "Detay — örgü dokusu ve aşınma." }
+    ],
+    "imageKey": "vessel",
+    "tags": ["el sanatı", "lif", "gündelik", "anadolu"],
+    "featured": false,
+    "availableForInquiry": true
   },
   {
     "id": "buddha-head-007",
+    "slug": "buda-basi",
     "title": "Buda Başı",
     "category": "Heykelsel Nesneler",
     "origin": "Tayland",
+    "region": "Güneydoğu Asya",
     "material": "Ahşap",
     "period": "18. – 19. yy.",
+    "estimatedYear": "yaklaşık 1820",
+    "dimensions": "Y 34 cm · G 18 cm · D 19 cm",
+    "condition": "İyi. Boyun kesitinde yaşa bağlı çatlak; yüz detayları net.",
+    "provenance": "Özel koleksiyon, Bangkok.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "Dingin yüz ifadesi ve koyu patinasıyla heykelsi bir odak noktası.",
-    "imageKey": "buddha_head"
+    "longDescription": [
+      "Yarı kapalı gözleri ve hafif tebessümüyle bu baş, içsel bir dinginliği taşır. Saç buklelerinin ritmik düzeni ve yüz hatlarının yumuşaklığı, dönemin heykel anlayışını özetler.",
+      "Koyu patina, ahşabın damarlarını örtmeden derinleştirir; figüre hem ağırlık hem zamansızlık verir. Tek başına bir baş olarak bile, bütünün taşıdığı sükûneti aktarır."
+    ],
+    "collectorNote": "Baş formundaki figürler, çoğunlukla daha büyük heykellerden zamanla ayrılmış parçalardır; bağımsız bir tefekkür nesnesine dönüşmüşlerdir.",
+    "images": [
+      { "alt": "Ahşap Buda başının önden görünümü", "caption": "Önden görünüm — dingin yüz ifadesi." },
+      { "alt": "Buda başının saç bukleleri detayı", "caption": "Detay — saç buklelerinin ritmi." },
+      { "alt": "Buda başının profil görünümü", "caption": "Profil — patina ve hat." }
+    ],
+    "imageKey": "buddha_head",
+    "tags": ["heykel", "figür", "patina", "tayland"],
+    "featured": true,
+    "availableForInquiry": true
   },
   {
     "id": "monk-drawing-008",
+    "slug": "kesis-calismasi",
     "title": "Keşiş Çalışması",
     "category": "Resim & Çizim",
     "origin": "Tibet",
+    "region": "Himalaya",
     "material": "Kağıt Üzerine Mürekkep",
     "period": "19. yy.",
+    "estimatedYear": "yaklaşık 1860",
+    "dimensions": "28 × 21 cm (çerçevesiz)",
+    "condition": "İyi. Kenarlarda hafif yıpranma; çizgi netliği korunmuş.",
+    "provenance": "Özel koleksiyon, Katmandu.",
     "statusLabel": "Yazışmaya açık",
     "shortDescription": "Kâğıt üzerinde figür, ritüel ve iz fikrini sade bir çizgiyle taşıyan çalışma.",
-    "imageKey": "monk_drawing"
+    "longDescription": [
+      "Az sayıda mürekkep çizgisiyle kurulan bu figür, ekonomik bir anlatımın gücünü gösterir. Boşlukta bırakılan alanlar, çizilen kadar anlam taşır; figürün duruşu birkaç hareketle özetlenir.",
+      "Kâğıdın dokusu ve mürekkebin yer yer açılan tonu, çalışmayı bir taslak ile bitmiş eser arasındaki o canlı eşikte tutar. Sadelik, burada bir eksiklik değil, bir tercihtir."
+    ],
+    "collectorNote": "Mürekkep çalışmaları, çoğu zaman daha büyük kompozisyonlar için hazırlık eskizleridir; ustanın elini en çıplak hâliyle gösterirler.",
+    "images": [
+      { "alt": "Kağıt üzerine mürekkep keşiş çalışması", "caption": "Tam görünüm — sade çizgi anlatımı." },
+      { "alt": "Keşiş çalışmasının çizgi detayı", "caption": "Detay — mürekkep tonu ve boşluk." }
+    ],
+    "imageKey": "monk_drawing",
+    "tags": ["çizim", "mürekkep", "figür", "tibet"],
+    "featured": false,
+    "availableForInquiry": true
   },
   {
     "id": "ritual-staff-009",
+    "slug": "rituel-asa-khakkhara",
     "title": "Ritüel Asa (Khakkhara)",
     "category": "Antika & Dekoratif Sanatlar",
     "origin": "Himalaya Bölgesi",
+    "region": "Himalaya",
     "material": "Ahşap, Pirinç",
     "period": "18. – 19. yy.",
+    "estimatedYear": "yaklaşık 1840",
+    "dimensions": "U 168 cm · Ø başlık 14 cm",
+    "condition": "İyi. Pirinç başlıkta yüzey oksidasyonu; halkalar tam.",
+    "provenance": "Manastır kullanımı, Himalaya; özel koleksiyon.",
     "statusLabel": "İnceleme talebi",
     "shortDescription": "Ritüel kullanım, metal ses ve el işçiliği arasında konumlanan sembolik bir nesne.",
-    "imageKey": "ritual_staff"
+    "longDescription": [
+      "Ahşap gövdesi ve pirinç başlığındaki halkalarla bu asa, hareket ettiğinde ses üreten ritüel bir nesnedir. Halkaların çınlaması, yürüyüşe eşlik eden bir uyarı ve dua işlevi taşır.",
+      "Pirinç yüzeydeki oksidasyon ve ahşaptaki patina, nesnenin uzun süre kullanıldığını gösterir. İşlev, ses ve sembol burada tek bir formda birleşir."
+    ],
+    "collectorNote": "Khakkhara'nın halkaları geleneksel olarak belirli sayılarda dökülür; her sayı, öğretiye dair sembolik bir anlam taşır.",
+    "images": [
+      { "alt": "Ritüel asanın pirinç başlık detayı", "caption": "Detay — pirinç başlık ve halkalar." },
+      { "alt": "Ritüel asanın tam boy görünümü", "caption": "Tam boy — ahşap gövde." }
+    ],
+    "imageKey": "ritual_staff",
+    "tags": ["ritüel", "pirinç", "sembol", "himalaya"],
+    "featured": false,
+    "availableForInquiry": true
   },
   {
     "id": "textile-fragment-010",
+    "slug": "dokuma-parca",
     "title": "Dokuma Parça",
     "category": "Tekstil / El Sanatları",
     "origin": "Anadolu",
+    "region": "Anadolu",
     "material": "Yün, Bitkisel Boya",
     "period": "19. yy.",
+    "estimatedYear": "yaklaşık 1875",
+    "dimensions": "54 × 38 cm",
+    "condition": "Orta-iyi. Kenarlarda yıpranma; renkler büyük ölçüde korunmuş.",
+    "provenance": "Özel tekstil koleksiyonu, Anadolu.",
     "statusLabel": "Yazışmaya açık",
     "shortDescription": "Renk, motif ve dokuma ritmiyle bir coğrafyanın görsel belleğini taşıyan tekstil parçası.",
-    "imageKey": "textile"
+    "longDescription": [
+      "Bitkisel boyalarla elde edilen yumuşak renk geçişleri ve tekrar eden motif düzeni, bu parçayı bir coğrafyanın görsel diline bağlar. Dokumanın sıklığı ve düğüm ritmi, ustanın elinin imzasını taşır.",
+      "Zamanla soluklaşan renkler, parçaya derinlik kazandırır; her ton, kullanılan bitkinin ve suyun hikâyesini saklar. Bir bütünden kalan bu parça, ait olduğu dokumanın belleğini sürdürür."
+    ],
+    "collectorNote": "Dokuma parçaları, çoğu zaman daha büyük bir yaygının ya da örtünün kalıntısıdır; motif ve renk, bölgesel atölyeleri tanımlamada anahtar rol oynar.",
+    "images": [
+      { "alt": "Yün dokuma parçanın genel görünümü", "caption": "Genel görünüm — motif ve renk düzeni." },
+      { "alt": "Dokuma parçanın düğüm ve doku detayı", "caption": "Detay — düğüm ritmi ve bitkisel boya." }
+    ],
+    "imageKey": "textile",
+    "tags": ["tekstil", "dokuma", "bitkisel boya", "motif", "anadolu"],
+    "featured": false,
+    "availableForInquiry": true
   }
 ]

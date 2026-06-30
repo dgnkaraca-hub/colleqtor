@@ -378,3 +378,102 @@ img.logo-symbol { width: 24px; height: 24px; object-fit: contain; display: block
 .logo-tile img.lockup-img { height: 54px; width: auto; }
 
 .hero-watermark img.logo-symbol { width: 100%; height: auto; }
+
+/* ============================================================
+   improvements — cards, gallery, filters, search, forms, a11y
+   ============================================================ */
+
+/* accessible focus — visible ring on keyboard navigation */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--cq-bronze);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* real object images (used when a record has photography) */
+.obj-thumb-img, .gallery-img { width: 100%; height: 100%; object-fit: cover; }
+
+/* object card — category eyebrow + short archive note */
+.obj-cat { color: var(--cq-bronze); font-size: 0.62rem; margin-bottom: 0.4rem; }
+.obj-note {
+  font-size: 0.78rem; line-height: 1.5; color: var(--cq-muted);
+  margin: 0 0 0.9rem; display: -webkit-box; -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; overflow: hidden;
+}
+
+/* detail page — status badge, category, tags */
+.detail-status { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.9rem; }
+.status-badge {
+  display: inline-block; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
+  font-weight: 600; color: var(--cq-bronze); border: 1px solid rgba(166,124,82,0.5);
+  border-radius: 999px; padding: 0.28rem 0.7rem;
+}
+.detail-cat { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cq-muted); }
+.tag-list { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 1.4rem 0 0; }
+.tag {
+  font-size: 0.68rem; letter-spacing: 0.04em; color: var(--cq-walnut);
+  background: rgba(217,199,172,0.28); border: 1px solid var(--cq-line-soft);
+  border-radius: 999px; padding: 0.3rem 0.7rem;
+}
+
+/* gallery — caption + thumbnails as buttons */
+.gallery-caption {
+  grid-column: 1; margin: 0.2rem 0 0; font-size: 0.76rem; color: var(--cq-muted);
+  font-style: italic; font-family: var(--cq-font-display);
+}
+.gallery-thumbs .gt {
+  padding: 0; background: none; font: inherit; width: 100%; color: inherit;
+}
+
+/* collection — search bar */
+.collection-search {
+  display: flex; align-items: center; gap: 0.7rem; margin: 0 0 1rem;
+  border: 1px solid var(--cq-line); border-radius: var(--cq-radius-md);
+  background: rgba(246,239,228,0.6); padding: 0 0.95rem; height: 52px;
+}
+.collection-search svg { width: 19px; height: 19px; color: var(--cq-bronze); flex: none; }
+.collection-search input {
+  flex: 1; border: 0; background: none; height: 100%; font-family: inherit;
+  font-size: 0.92rem; color: var(--cq-ink);
+}
+.collection-search input:focus { outline: none; }
+.collection-search input::placeholder { color: var(--cq-muted); }
+.clear-search {
+  border: 0; background: none; color: var(--cq-muted); font-size: 1.4rem; line-height: 1;
+  padding: 0 0.2rem; flex: none;
+}
+.clear-search:hover { color: var(--cq-walnut); }
+
+/* collection — result bar + clear filters */
+.result-bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  margin: -1.2rem 0 1.6rem; flex-wrap: wrap;
+}
+.result-bar .result-note { margin: 0; }
+.clear-filters {
+  border: 1px solid var(--cq-line); background: none; color: var(--cq-walnut);
+  border-radius: var(--cq-radius-md); padding: 0.45rem 0.9rem;
+  font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+  transition: border-color .2s, color .2s;
+}
+.clear-filters:hover { border-color: var(--cq-bronze); color: var(--cq-bronze); }
+
+/* inquiry form — validation states */
+.form-field.invalid input, .form-field.invalid textarea {
+  border-color: #a8431f; background: rgba(168,67,31,0.05);
+}
+.field-error { margin: 0.4rem 0 0; font-size: 0.74rem; color: #a8431f; }
+.form-err {
+  margin-top: 1.2rem; padding: 1rem 1.2rem; border: 1px solid rgba(168,67,31,0.4);
+  border-radius: var(--cq-radius-sm); background: rgba(168,67,31,0.06);
+  font-size: 0.92rem; color: #8a3a1c;
+}
+.submit-btn:disabled { opacity: 0.6; cursor: default; }
+
+/* footer — tagline + copy */
+.footer-tagline { font-size: 0.72rem; letter-spacing: 0.06em; color: rgba(246,239,228,0.78); }
+.footer-copy { margin-left: auto; font-size: 0.66rem; letter-spacing: 0.06em; color: rgba(246,239,228,0.5); }
+@media (max-width: 860px) {
+  .footer-copy { margin-left: 0; width: 100%; }
+}

@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
 import LogoSymbol from "./LogoSymbol";
-import { NAV } from "../lib/data";
+
+const FOOTER_NAV = [
+  { label: "KOLEKSİYON", to: "/koleksiyon" },
+  { label: "GÜNLÜK", to: "/gunluk" },
+  { label: "HAKKIMIZDA", to: "/hakkimizda" },
+  { label: "YAZIŞMA", to: "/yazisma" },
+];
+
+// Placeholder destinations — replace with the real handle / inbox before launch.
+const INSTAGRAM_URL = "https://instagram.com/colleqtor";
+const EMAIL = "merhaba@colleqtor.com";
 
 export default function Footer() {
   return (
@@ -10,20 +20,25 @@ export default function Footer() {
           <LogoSymbol />
           <span className="word">colleqtor</span>
         </Link>
-        <span className="footer-sep">|</span>
-        <span>© 2026 colleqtor &nbsp; TÜM HAKLARI SAKLIDIR.</span>
-        <nav className="footer-nav">
-          {NAV.map((n) => (
-            <Link key={n.key} to={n.to}>
+        <span className="footer-tagline">Yaşayan Koleksiyon &amp; Dijital Arşiv</span>
+
+        <nav className="footer-nav" aria-label="Alt menü">
+          {FOOTER_NAV.map((n) => (
+            <Link key={n.to} to={n.to}>
               {n.label}
             </Link>
           ))}
         </nav>
+
         <div className="footer-right">
-          <Link to="/styleguide">INSTAGRAM</Link>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
+            INSTAGRAM
+          </a>
           <span className="footer-sep">|</span>
-          <Link to="/yazisma">E-POSTA BÜLTENİ</Link>
+          <a href={`mailto:${EMAIL}`}>E-POSTA</a>
         </div>
+
+        <div className="footer-copy">© 2026 colleqtor — Tüm hakları saklıdır.</div>
       </div>
     </footer>
   );

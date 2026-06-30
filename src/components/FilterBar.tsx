@@ -2,11 +2,13 @@ import type { ReactNode } from "react";
 import { FilterIcon, Chevron } from "./Icons";
 
 export interface Filters {
+  q: string;
   material: string;
   origin: string;
   period: string;
   technique: string;
   category: string;
+  status: string;
   sort: string;
 }
 
@@ -19,11 +21,27 @@ interface Props {
   categories: { label: string; value: string }[];
 }
 
-function Pill({ icon, children }: { icon: string; children: ReactNode }) {
+const STATUSES = ["İnceleme talebi", "Yazışmaya açık"];
+
+function Pill({
+  icon,
+  label,
+  value,
+  onChange,
+  children,
+}: {
+  icon: string;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  children: ReactNode;
+}) {
   return (
     <div className="filter-pill">
       <FilterIcon name={icon} />
-      {children}
+      <select aria-label={label} value={value} onChange={(e) => onChange(e.target.value)}>
+        {children}
+      </select>
       <Chevron />
     </div>
   );
@@ -39,60 +57,49 @@ export default function FilterBar({
 }: Props) {
   return (
     <div className="filter-bar">
-      <Pill icon="material">
-        <select value={filters.material} onChange={(e) => onChange("material", e.target.value)}>
-          <option value="">MALZEME</option>
-          {materials.map((m) => (
-            <option key={m} value={m}>
-              {m}
-            </option>
-          ))}
-        </select>
+      <Pill icon="material" label="Malzemeye göre filtrele" value={filters.material} onChange={(v) => onChange("material", v)}>
+        <option value="">MALZEME</option>
+        {materials.map((m) => (
+          <option key={m} value={m}>
+            {m}
+          </option>
+        ))}
       </Pill>
-      <Pill icon="region">
-        <select value={filters.origin} onChange={(e) => onChange("origin", e.target.value)}>
-          <option value="">BÖLGE</option>
-          {origins.map((o) => (
-            <option key={o} value={o}>
-              {o}
-            </option>
-          ))}
-        </select>
+      <Pill icon="region" label="Kökene göre filtrele" value={filters.origin} onChange={(v) => onChange("origin", v)}>
+        <option value="">KÖKEN</option>
+        {origins.map((o) => (
+          <option key={o} value={o}>
+            {o}
+          </option>
+        ))}
       </Pill>
-      <Pill icon="period">
-        <select value={filters.period} onChange={(e) => onChange("period", e.target.value)}>
-          <option value="">DÖNEM</option>
-          {periods.map((p) => (
-            <option key={p} value={p}>
-              {p}
-            </option>
-          ))}
-        </select>
+      <Pill icon="period" label="Döneme göre filtrele" value={filters.period} onChange={(v) => onChange("period", v)}>
+        <option value="">DÖNEM</option>
+        {periods.map((p) => (
+          <option key={p} value={p}>
+            {p}
+          </option>
+        ))}
       </Pill>
-      <Pill icon="technique">
-        <select value={filters.technique} onChange={(e) => onChange("technique", e.target.value)}>
-          <option value="">TEKNİK</option>
-          <option value="Oyma">Oyma</option>
-          <option value="Suluboya">Suluboya</option>
-          <option value="Mürekkep">Mürekkep</option>
-          <option value="Dokuma">Dokuma</option>
-        </select>
+      <Pill icon="category" label="Kategoriye göre filtrele" value={filters.category} onChange={(v) => onChange("category", v)}>
+        <option value="">KATEGORİ</option>
+        {categories.map((c) => (
+          <option key={c.value} value={c.value}>
+            {c.label}
+          </option>
+        ))}
       </Pill>
-      <Pill icon="category">
-        <select value={filters.category} onChange={(e) => onChange("category", e.target.value)}>
-          <option value="">KATEGORİ</option>
-          {categories.map((c) => (
-            <option key={c.value} value={c.value}>
-              {c.label}
-            </option>
-          ))}
-        </select>
+      <Pill icon="technique" label="Durumuna göre filtrele" value={filters.status} onChange={(v) => onChange("status", v)}>
+        <option value="">DURUM</option>
+        {STATUSES.map((s) => (
+          <option key={s} value={s}>
+            {s}
+          </option>
+        ))}
       </Pill>
-      <Pill icon="sort">
-        <select value={filters.sort} onChange={(e) => onChange("sort", e.target.value)}>
-          <option value="new">SIRALAMA / En Yeni</option>
-          <option value="az">SIRALAMA / İsme Göre</option>
-        </select>
+      <Pill icon="sort" label="Sıralama" value={filters.sort} onChange={(v) => onChange("sort", v)}>
+        <option value="new">SIRALAMA / En Yeni</option>
+        <option value="az">SIRALAMA / İsme Göre (A–Z)</option>
       </Pill>
     </div>
   );
