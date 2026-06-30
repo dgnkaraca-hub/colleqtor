@@ -1,0 +1,30 @@
+[
+  {
+    "id": "journal-001",
+    "title": "Ahşabın Dili: Ustalık ve Sabır Üzerine",
+    "date": "12 Mayıs 2024",
+    "excerpt": "Bir yüzeydeki çatlak, yalnızca zamanın değil; ona dokunan ellerin de kaydıdır.",
+    "imageKey": "bodhisattva_detail"
+  },
+  {
+    "id": "journal-002",
+    "title": "Anadolu Dolaplarında Süsleme ve Sembolizm",
+    "date": "28 Nisan 2024",
+    "excerpt": "Geometrik formlar, malzemenin içinden çıkan sessiz bir düzen kurar.",
+    "imageKey": "cabinet"
+  },
+  {
+    "id": "journal-003",
+    "title": "Kağıt Üzerinde Bir Zaman Yolculuğu",
+    "date": "15 Nisan 2024",
+    "excerpt": "Çizgi, bazen nesnenin kendisinden daha eski bir hafızayı çağırır.",
+    "imageKey": "monk_drawing"
+  },
+  {
+    "id": "journal-004",
+    "title": "Patina: Bir Yüzeyin Hatırlama Biçimi",
+    "date": "3 Haziran 2024",
+    "excerpt": "Patina kusur değil; nesnenin zamanla kurduğu ilişkinin görünür hâlidir.",
+    "imageKey": "wood_texture"
+  }
+]
