@@ -477,3 +477,72 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 @media (max-width: 860px) {
   .footer-copy { margin-left: 0; width: 100%; }
 }
+
+/* ============================================================
+   quiet motion — scroll reveal, hero entrance, hover life
+   (all opt-in; fully disabled under prefers-reduced-motion)
+   ============================================================ */
+
+/* scroll reveal: rest state → revealed. Staggering via --reveal-i index. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: calc(var(--reveal-i, 0) * 70ms);
+  will-change: opacity, transform;
+}
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* hero entrance — runs once on load, staggered down the column */
+.hero-eyebrow, .hero h1, .hero-lead, .hero .link-arrow {
+  animation: cq-rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.hero-eyebrow   { animation-delay: 0.05s; }
+.hero h1        { animation-delay: 0.18s; }
+.hero-lead      { animation-delay: 0.34s; }
+.hero .link-arrow { animation-delay: 0.48s; }
+@keyframes cq-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* the hero art cluster drifts in a touch later, quietly */
+.hero-cluster { animation: cq-fade 1.4s ease 0.2s both; }
+@keyframes cq-fade { from { opacity: 0; } to { opacity: 0.9; } }
+
+/* card life — image breathes in on hover (object showcase feel) */
+.obj-thumb .ph, .obj-thumb .obj-thumb-img {
+  transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.obj-card:hover .obj-thumb .ph,
+.obj-card:hover .obj-thumb .obj-thumb-img {
+  transform: scale(1.045);
+}
+
+/* collection — branded empty state */
+.empty-state {
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 0.9rem; padding: 3.4rem 1.4rem; border: 1px solid var(--cq-line);
+  border-radius: var(--cq-radius-sm); background: rgba(246,239,228,0.5);
+}
+.empty-state .logo-symbol { width: 38px; height: 38px; opacity: 0.5; }
+.empty-state p { margin: 0; color: var(--cq-muted); font-size: 0.92rem; max-width: 26rem; }
+.empty-state .empty-title {
+  font-family: var(--cq-font-display); font-size: 1.5rem; color: var(--cq-ink); font-style: italic;
+}
+
+/* respect reduced motion — strip every reveal/entrance/hover transform */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .hero-eyebrow, .hero h1, .hero-lead, .hero .link-arrow,
+  .hero-cluster { animation: none; }
+  .hero-cluster { opacity: 0.9; }
+  .obj-thumb .ph, .obj-thumb .obj-thumb-img { transition: none; }
+  .obj-card:hover .obj-thumb .ph,
+  .obj-card:hover .obj-thumb .obj-thumb-img { transform: none; }
+}

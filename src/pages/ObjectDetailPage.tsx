@@ -5,10 +5,12 @@ import RelatedObjects from "../components/RelatedObjects";
 import QuietInquiryPanel from "../components/QuietInquiryPanel";
 import { OBJECTS } from "../lib/data";
 import { buildMeta, buildDescription, buildNote } from "../lib/objectMeta";
+import { useReveal } from "../lib/useReveal";
 
 export default function ObjectDetailPage() {
   const { id } = useParams();
   const obj = OBJECTS.find((o) => o.id === id);
+  useReveal([id]);
 
   if (!obj) {
     return (
@@ -91,7 +93,7 @@ export default function ObjectDetailPage() {
       </div>
 
       <section className="wrap">
-        <div className="related-split">
+        <div className="related-split" data-reveal>
           <RelatedObjects objects={related} />
           <QuietInquiryPanel objectId={obj.availableForInquiry === false ? undefined : obj.id} />
         </div>

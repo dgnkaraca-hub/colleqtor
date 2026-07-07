@@ -10,8 +10,8 @@ export default function RelatedObjects({ objects }: { objects: ArchiveObject[] }
         </h2>
       </div>
       <div className="obj-grid cols-5" style={{ gridTemplateColumns: "repeat(4,1fr)" }}>
-        {objects.map((o) => (
-          <ObjectCard key={o.id} obj={o} compact />
+        {objects.map((o, i) => (
+          <ObjectCard key={o.id} obj={o} compact revealIndex={i} />
         ))}
       </div>
     </div>

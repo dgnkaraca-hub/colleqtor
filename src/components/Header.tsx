@@ -43,13 +43,15 @@ export default function Header() {
           <button
             className="icon-btn hamburger"
             aria-label="Menü"
+            aria-expanded={open}
+            aria-controls="mobile-menu"
             onClick={() => setOpen((v) => !v)}
           >
             <MenuIcon />
           </button>
         </div>
       </div>
-      <div className={"mobile-menu" + (open ? " open" : "")}>
+      <div id="mobile-menu" className={"mobile-menu" + (open ? " open" : "")}>
         <div className="wrap">
           <nav>{renderLinks()}</nav>
         </div>

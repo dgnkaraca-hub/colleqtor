@@ -1,8 +1,11 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import Placeholder from "../components/Placeholder";
 import { JOURNAL } from "../lib/data";
+import { useReveal } from "../lib/useReveal";
 
 export default function JournalPage() {
+  useReveal();
   return (
     <div className="wrap">
       <div className="lede" style={{ padding: "clamp(2.4rem,6vw,4rem) 0 2rem" }}>
@@ -17,8 +20,14 @@ export default function JournalPage() {
       </div>
       <section style={{ paddingTop: 0 }}>
         <div className="journal-list">
-          {JOURNAL.map((j) => (
-            <Link key={j.id} className="journal-card" to="/gunluk">
+          {JOURNAL.map((j, i) => (
+            <Link
+              key={j.id}
+              className="journal-card"
+              to="/gunluk"
+              data-reveal
+              style={{ "--reveal-i": i % 2 } as CSSProperties}
+            >
               <div className="jc-thumb">
                 <Placeholder category="Resim & Çizim" />
               </div>

@@ -4,8 +4,10 @@ import FilterBar from "../components/FilterBar";
 import type { Filters } from "../components/FilterBar";
 import ObjectGrid from "../components/ObjectGrid";
 import Placeholder from "../components/Placeholder";
+import LogoSymbol from "../components/LogoSymbol";
 import { SearchIcon } from "../components/Icons";
 import { OBJECTS, CATEGORIES, CATEGORY_FROM_LABEL } from "../lib/data";
+import { useReveal } from "../lib/useReveal";
 
 const EMPTY: Filters = {
   q: "",
@@ -90,6 +92,8 @@ export default function CollectionPage({ presetCategory = "" }: { presetCategory
     return result;
   }, [filters]);
 
+  useReveal([list]);
+
   const activeCount = useMemo(
     () =>
       (["q", "material", "origin", "period", "category", "status"] as (keyof Filters)[]).filter(
@@ -100,7 +104,7 @@ export default function CollectionPage({ presetCategory = "" }: { presetCategory
 
   return (
     <div className="wrap">
-      <div className="page-hero">
+      <div className="page-hero" data-reveal>
         <div>
           <h1>Koleksiyon Arşivi</h1>
           <p>
@@ -158,7 +162,18 @@ export default function CollectionPage({ presetCategory = "" }: { presetCategory
       {list.length ? (
         <ObjectGrid objects={list} cols5 compact />
       ) : (
-        <p className="muted">Bu ölçütlere uygun nesne bulunamadı.</p>
+        <div className="empty-state">
+          <LogoSymbol />
+          <div className="empty-title">Bu ölçütlere uygun bir kayıt yok.</div>
+          <p>
+            Arama ya da filtreleri sadeleştirerek arşivin tamamına yeniden bakabilirsiniz.
+          </p>
+          {activeCount > 0 ? (
+            <button type="button" className="clear-filters" onClick={() => setFilters({ ...EMPTY })}>
+              Filtreleri temizle
+            </button>
+          ) : null}
+        </div>
       )}
     </div>
   );

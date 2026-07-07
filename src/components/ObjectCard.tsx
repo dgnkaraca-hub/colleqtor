@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import Placeholder from "./Placeholder";
 import type { ArchiveObject, ObjectImage } from "../types";
@@ -5,13 +6,22 @@ import type { ArchiveObject, ObjectImage } from "../types";
 interface Props {
   obj: ArchiveObject;
   compact?: boolean;
+  revealIndex?: number;
 }
 
-export default function ObjectCard({ obj, compact = false }: Props) {
+export default function ObjectCard({ obj, compact = false, revealIndex }: Props) {
   const cover: ObjectImage | undefined = obj.images?.[0];
+  const revealProps =
+    revealIndex === undefined
+      ? {}
+      : { "data-reveal": "", style: { "--reveal-i": revealIndex } as CSSProperties };
 
   return (
-    <Link className={"obj-card" + (compact ? " compact" : "")} to={"/nesneler/" + obj.id}>
+    <Link
+      className={"obj-card" + (compact ? " compact" : "")}
+      to={"/nesneler/" + obj.id}
+      {...revealProps}
+    >
       <div className="obj-thumb">
         {cover?.src ? (
           <img src={cover.src} alt={cover.alt} className="obj-thumb-img" />
