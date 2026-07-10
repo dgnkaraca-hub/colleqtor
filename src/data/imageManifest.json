@@ -1,0 +1,27 @@
+{
+  "objects": {
+    "ahs-bodhisattva-001": [
+      {
+        "src": "/objects/ahs-bodhisattva-001/01.jpg",
+        "width": 1800,
+        "height": 1800,
+        "variants": {
+          "480": "/objects-optimized/ahs-bodhisattva-001/01-480.webp",
+          "960": "/objects-optimized/ahs-bodhisattva-001/01-960.webp",
+          "1600": "/objects-optimized/ahs-bodhisattva-001/01-1600.webp"
+        }
+      },
+      {
+        "src": "/objects/ahs-bodhisattva-001/02.jpg",
+        "width": 1800,
+        "height": 1800,
+        "variants": {
+          "480": "/objects-optimized/ahs-bodhisattva-001/02-480.webp",
+          "960": "/objects-optimized/ahs-bodhisattva-001/02-960.webp",
+          "1600": "/objects-optimized/ahs-bodhisattva-001/02-1600.webp"
+        }
+      }
+    ]
+  },
+  "journal": {}
+}

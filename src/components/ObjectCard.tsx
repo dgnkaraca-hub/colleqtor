@@ -1,7 +1,8 @@
 import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
-import Placeholder from "./Placeholder";
-import type { ArchiveObject, ObjectImage } from "../types";
+import ObjectImage from "./ObjectImage";
+import { getObjectImages } from "../lib/images";
+import type { ArchiveObject } from "../types";
 
 interface Props {
   obj: ArchiveObject;
@@ -10,7 +11,7 @@ interface Props {
 }
 
 export default function ObjectCard({ obj, compact = false, revealIndex }: Props) {
-  const cover: ObjectImage | undefined = obj.images?.[0];
+  const cover = getObjectImages(obj)[0];
   const revealProps =
     revealIndex === undefined
       ? {}
@@ -23,11 +24,13 @@ export default function ObjectCard({ obj, compact = false, revealIndex }: Props)
       {...revealProps}
     >
       <div className="obj-thumb">
-        {cover?.src ? (
-          <img src={cover.src} alt={cover.alt} className="obj-thumb-img" />
-        ) : (
-          <Placeholder category={obj.category} title={obj.title} />
-        )}
+        <ObjectImage
+          image={cover}
+          category={obj.category}
+          title={obj.title}
+          sizes="(max-width: 620px) 50vw, (max-width: 1100px) 33vw, 20vw"
+          className="obj-thumb-img"
+        />
       </div>
       <div className="obj-body">
         <div className="obj-cat small-caps">{obj.category}</div>

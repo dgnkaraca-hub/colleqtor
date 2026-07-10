@@ -1,26 +1,43 @@
 import { useState } from "react";
+import ObjectImage from "./ObjectImage";
 import Placeholder from "./Placeholder";
-import type { ArchiveObject, ObjectImage } from "../types";
+import Lightbox from "./Lightbox";
+import { getObjectImages } from "../lib/images";
+import type { ArchiveObject } from "../types";
 
 export default function ImageGallery({ obj }: { obj: ArchiveObject }) {
-  // Always have at least one frame so the layout (and fallback) stays stable.
-  const images: ObjectImage[] =
-    obj.images && obj.images.length ? obj.images : [{ alt: obj.title }];
+  const images = getObjectImages(obj);
+  const hasReal = images.length > 0;
 
   const [active, setActive] = useState(0);
-  const current = images[active] ?? images[0];
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const current = images[active];
 
   return (
     <div className="gallery">
       <figure className="gallery-main">
-        {current.src ? (
-          <img src={current.src} alt={current.alt} className="gallery-img" />
+        {hasReal ? (
+          <button
+            type="button"
+            className="gallery-zoom"
+            onClick={() => setLightboxOpen(true)}
+            aria-label="Görseli büyüt"
+          >
+            <ObjectImage
+              image={current}
+              category={obj.category}
+              title={obj.title}
+              sizes="(max-width: 860px) 92vw, 44vw"
+              eager
+              className="gallery-img"
+            />
+          </button>
         ) : (
           <Placeholder category={obj.category} title={obj.title} />
         )}
       </figure>
 
-      {current.caption ? (
+      {current?.caption ? (
         <figcaption className="gallery-caption">{current.caption}</figcaption>
       ) : null}
 
@@ -28,21 +45,26 @@ export default function ImageGallery({ obj }: { obj: ArchiveObject }) {
         <div className="gallery-thumbs" role="group" aria-label="Nesne görselleri">
           {images.map((img, i) => (
             <button
-              key={i}
+              key={img.src}
               type="button"
               className={"gt" + (i === active ? " active" : "")}
               onClick={() => setActive(i)}
               aria-label={img.alt || `Görsel ${i + 1}`}
               aria-pressed={i === active}
             >
-              {img.src ? (
-                <img src={img.src} alt="" />
-              ) : (
-                <Placeholder category={obj.category} />
-              )}
+              <ObjectImage image={img} category={obj.category} sizes="110px" />
             </button>
           ))}
         </div>
+      ) : null}
+
+      {lightboxOpen && hasReal ? (
+        <Lightbox
+          images={images}
+          index={active}
+          onClose={() => setLightboxOpen(false)}
+          onNavigate={setActive}
+        />
       ) : null}
     </div>
   );
