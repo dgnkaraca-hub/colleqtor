@@ -8,6 +8,7 @@ import LogoSymbol from "../components/LogoSymbol";
 import { SearchIcon } from "../components/Icons";
 import { OBJECTS, CATEGORIES, CATEGORY_FROM_LABEL } from "../lib/data";
 import { useReveal } from "../lib/useReveal";
+import { useDocumentMeta } from "../lib/seo";
 
 const EMPTY: Filters = {
   q: "",
@@ -93,6 +94,13 @@ export default function CollectionPage({ presetCategory = "" }: { presetCategory
   }, [filters]);
 
   useReveal([list]);
+
+  useDocumentMeta({
+    title: presetCategory ? `${presetCategory} — Koleksiyon Arşivi` : "Koleksiyon Arşivi",
+    description:
+      "Oyma ahşap heykeller, dekoratif sanat nesneleri, resimler, çizimler ve tekstillerden oluşan koleksiyon arşivi — köken, dönem ve malzeme bilgileriyle.",
+    path: presetCategory ? "/resim-cizim" : "/koleksiyon",
+  });
 
   const activeCount = useMemo(
     () =>

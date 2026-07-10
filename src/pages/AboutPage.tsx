@@ -1,9 +1,16 @@
 import type { CSSProperties } from "react";
 import LogoSymbol from "../components/LogoSymbol";
+import { useDocumentMeta } from "../lib/seo";
 import { useReveal } from "../lib/useReveal";
 
 export default function AboutPage() {
   useReveal();
+  useDocumentMeta({
+    title: "Hakkımızda",
+    description:
+      "colleqtor; maddi hafıza taşıyan nesneler için yaşayan bir koleksiyon arşivi, sessiz bir galeri ve küratör–koleksiyoner buluşma noktasıdır.",
+    path: "/hakkimizda",
+  });
   return (
     <div className="wrap">
       <div className="lede" style={{ padding: "clamp(2.4rem,6vw,4rem) 0 0" }}>

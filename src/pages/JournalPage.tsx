@@ -2,10 +2,32 @@ import type { CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import Placeholder from "../components/Placeholder";
 import { JOURNAL } from "../lib/data";
+import { SITE, useDocumentMeta, useJsonLd } from "../lib/seo";
 import { useReveal } from "../lib/useReveal";
+
+const BLOG_LD = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  name: `${SITE.name} — Günlük / Notlar`,
+  url: `${SITE.url}/gunluk`,
+  inLanguage: "tr",
+  blogPost: JOURNAL.map((j) => ({
+    "@type": "BlogPosting",
+    headline: j.title,
+    description: j.excerpt,
+    url: `${SITE.url}/gunluk`,
+  })),
+};
 
 export default function JournalPage() {
   useReveal();
+  useDocumentMeta({
+    title: "Günlük / Notlar",
+    description:
+      "Kısa düşünceler, malzeme notları, arşivleme süreci ve nesnelerin hikâyeleri.",
+    path: "/gunluk",
+  });
+  useJsonLd(BLOG_LD);
   return (
     <div className="wrap">
       <div className="lede" style={{ padding: "clamp(2.4rem,6vw,4rem) 0 2rem" }}>

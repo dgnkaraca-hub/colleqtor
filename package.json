@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "images": "node scripts/optimize-images.mjs",
-    "build": "npm run images && tsc --noEmit && vite build",
+    "sitemap": "node scripts/generate-sitemap.mjs",
+    "build": "npm run images && npm run sitemap && tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },

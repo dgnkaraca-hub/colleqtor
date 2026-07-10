@@ -2,6 +2,7 @@ import LogoSymbol from "../components/LogoSymbol";
 import LogoLockup from "../components/LogoLockup";
 import StyleguideSection from "../components/StyleguideSection";
 import SocialTemplateCard from "../components/SocialTemplateCard";
+import { useDocumentMeta } from "../lib/seo";
 
 const TOKENS: [string, string][] = [
   ["--cq-ivory", "#f6efe4"],
@@ -32,6 +33,11 @@ const PRINCIPLES: [string, string][] = [
 ];
 
 export default function StyleguidePage() {
+  useDocumentMeta({
+    title: "Stil Rehberi",
+    description: "colleqtor marka kimliği: logo kullanımı, renk paleti, tipografi ve sosyal şablonlar.",
+    path: "/styleguide",
+  });
   return (
     <div className="wrap">
       <div className="lede" style={{ padding: "clamp(2.4rem,6vw,4rem) 0 1rem" }}>

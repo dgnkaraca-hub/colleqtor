@@ -5,12 +5,43 @@ import RelatedObjects from "../components/RelatedObjects";
 import QuietInquiryPanel from "../components/QuietInquiryPanel";
 import { OBJECTS } from "../lib/data";
 import { buildMeta, buildDescription, buildNote } from "../lib/objectMeta";
+import { getObjectImages } from "../lib/images";
+import { SITE, useDocumentMeta, useJsonLd } from "../lib/seo";
 import { useReveal } from "../lib/useReveal";
 
 export default function ObjectDetailPage() {
   const { id } = useParams();
   const obj = OBJECTS.find((o) => o.id === id);
   useReveal([id]);
+
+  // Social image: first real photograph, else the brand symbol.
+  const cover = obj ? getObjectImages(obj)[0] : undefined;
+
+  useDocumentMeta({
+    title: obj ? obj.title : "Nesne bulunamadı",
+    description: obj?.shortDescription,
+    path: obj ? `/nesneler/${obj.id}` : "/koleksiyon",
+    image: cover?.src ?? SITE.logoSymbol,
+  });
+
+  useJsonLd(
+    obj
+      ? {
+          "@context": "https://schema.org",
+          "@type": "VisualArtwork",
+          name: obj.title,
+          description: obj.shortDescription,
+          url: `${SITE.url}/nesneler/${obj.id}`,
+          image: SITE.url + (cover?.src ?? SITE.logoSymbol),
+          artMedium: obj.material,
+          artform: obj.category,
+          ...(obj.dimensions ? { size: obj.dimensions } : {}),
+          ...(obj.estimatedYear ? { dateCreated: obj.estimatedYear } : {}),
+          countryOfOrigin: obj.origin,
+          ...(obj.tags?.length ? { keywords: obj.tags.join(", ") } : {}),
+        }
+      : null
+  );
 
   if (!obj) {
     return (

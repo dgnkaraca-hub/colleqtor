@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useSearchParams } from "react-router-dom";
 import { OBJECTS } from "../lib/data";
+import { useDocumentMeta } from "../lib/seo";
 
 /**
  * Netlify Forms submission. The form is declared statically in index.html
@@ -31,6 +32,13 @@ export default function InquiryPage() {
   const [botField, setBotField] = useState(""); // honeypot — humans never see it
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
+
+  useDocumentMeta({
+    title: "İletişim",
+    description:
+      "Bir nesne, bir dönem ya da koleksiyon hakkında merak ettikleriniz için bize yazın.",
+    path: "/iletisim",
+  });
 
   function validate(): FieldErrors {
     const e: FieldErrors = {};

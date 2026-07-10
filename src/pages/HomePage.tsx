@@ -6,9 +6,22 @@ import JournalPreview from "../components/JournalPreview";
 import QuietInquiryPanel from "../components/QuietInquiryPanel";
 import { OBJECTS } from "../lib/data";
 import { useReveal } from "../lib/useReveal";
+import { SITE, useDocumentMeta, useJsonLd } from "../lib/seo";
+
+const ORGANIZATION_LD = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  alternateName: SITE.tagline,
+  url: SITE.url,
+  logo: SITE.url + SITE.logoSymbol,
+  description: SITE.description,
+};
 
 export default function HomePage() {
   useReveal();
+  useDocumentMeta({ path: "/" });
+  useJsonLd(ORGANIZATION_LD);
   return (
     <>
       <Hero />
