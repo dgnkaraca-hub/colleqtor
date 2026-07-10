@@ -459,6 +459,12 @@ select:focus-visible, textarea:focus-visible, [tabindex]:focus-visible {
 }
 .clear-filters:hover { border-color: var(--cq-bronze); color: var(--cq-bronze); }
 
+/* inquiry form — honeypot (visually removed, still in the DOM for bots) */
+.hp-field {
+  position: absolute !important; left: -9999px !important;
+  width: 1px; height: 1px; overflow: hidden; margin: 0;
+}
+
 /* inquiry form — validation states */
 .form-field.invalid input, .form-field.invalid textarea {
   border-color: #a8431f; background: rgba(168,67,31,0.05);

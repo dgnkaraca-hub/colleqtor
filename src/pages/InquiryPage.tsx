@@ -3,12 +3,12 @@ import { useSearchParams } from "react-router-dom";
 import { OBJECTS } from "../lib/data";
 
 /**
- * Optional submission endpoint. Leave empty to run in "demo" mode (the form
- * validates and shows a success state without a network call). To go live,
- * set VITE_INQUIRY_ENDPOINT to a Formspree / Netlify Forms / custom URL that
- * accepts a JSON POST. No other code change needed.
+ * Netlify Forms submission. The form is declared statically in index.html
+ * (name="iletisim", honeypot "bot-field") so Netlify's deploy-time parser can
+ * register it; here we POST url-encoded data to "/" as Netlify expects.
+ * In local dev there is no Netlify endpoint, so we simulate the round trip.
  */
-const FORM_ENDPOINT: string = import.meta.env.VITE_INQUIRY_ENDPOINT ?? "";
+const FORM_NAME = "iletisim";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -28,6 +28,7 @@ export default function InquiryPage() {
   const [email, setEmail] = useState("");
   const [object, setObject] = useState(presetObject);
   const [message, setMessage] = useState("");
+  const [botField, setBotField] = useState(""); // honeypot — humans never see it
   const [errors, setErrors] = useState<FieldErrors>({});
   const [status, setStatus] = useState<Status>("idle");
 
@@ -50,32 +51,35 @@ export default function InquiryPage() {
     }
 
     const selected = OBJECTS.find((o) => o.id === object);
-    const payload = {
+    const body = new URLSearchParams({
+      "form-name": FORM_NAME,
+      "bot-field": botField,
       name: name.trim(),
       email: email.trim(),
       object: selected ? selected.title : "",
       objectId: object || "",
       message: message.trim(),
-    };
+    });
 
     setStatus("sending");
     try {
-      if (FORM_ENDPOINT) {
-        const res = await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error("Network response was not ok");
-      } else {
-        // Demo mode: no endpoint configured.
+      if (import.meta.env.DEV) {
+        // Local dev has no Netlify endpoint; simulate the round trip.
         await new Promise((r) => setTimeout(r, 600));
+      } else {
+        const res = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString(),
+        });
+        if (!res.ok) throw new Error("Netlify form submission failed");
       }
       setStatus("success");
       setName("");
       setEmail("");
       setObject("");
       setMessage("");
+      setBotField("");
       setErrors({});
     } catch {
       setStatus("error");
@@ -101,7 +105,32 @@ export default function InquiryPage() {
           </p>
         </div>
 
-        <form className="inquiry-form" onSubmit={handleSubmit} noValidate>
+        <form
+          className="inquiry-form"
+          name={FORM_NAME}
+          method="POST"
+          data-netlify="true"
+          onSubmit={handleSubmit}
+          noValidate
+        >
+          {/* Netlify needs the form name inside the payload as well. */}
+          <input type="hidden" name="form-name" value={FORM_NAME} />
+
+          {/* Honeypot — visually hidden; bots that fill it are discarded. */}
+          <p className="hp-field" aria-hidden="true">
+            <label>
+              Bu alanı boş bırakın:{" "}
+              <input
+                type="text"
+                name="bot-field"
+                tabIndex={-1}
+                autoComplete="off"
+                value={botField}
+                onChange={(e) => setBotField(e.target.value)}
+              />
+            </label>
+          </p>
+
           <div className={"form-field" + (errors.name ? " invalid" : "")}>
             <label htmlFor="f-name">Ad / Kurum</label>
             <input

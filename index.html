@@ -48,6 +48,28 @@
     />
   </head>
   <body>
+    <!--
+      Netlify Forms detection target. Netlify parses static HTML at deploy
+      time, so the SPA's JS-rendered form is invisible to it — this hidden
+      mirror declares the form name and fields. The React form on /iletisim
+      POSTs url-encoded data to "/" with form-name=iletisim.
+    -->
+    <form
+      name="iletisim"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+      aria-hidden="true"
+    >
+      <input type="hidden" name="form-name" value="iletisim" />
+      <input type="text" name="bot-field" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="object" />
+      <input type="text" name="objectId" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
