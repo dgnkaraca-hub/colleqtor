@@ -22,7 +22,7 @@ marketplace.
 
 ## Stack
 
-Vite 5 · React 18 · TypeScript · react-router-dom 6 · Tailwind.
+Vite 6 · React 18 · TypeScript · react-router-dom 6 · Tailwind.
 `npm run dev` / `npm run build` (tsc --noEmit + vite build) /
 `npm run typecheck`.
 
